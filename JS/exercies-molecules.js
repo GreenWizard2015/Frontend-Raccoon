@@ -1,25 +1,26 @@
 /**
- * URL: http://jsraccoon.ru/exercies-molecules 
+ * URL: http://jsraccoon.ru/exercies-molecules
  */
 
-function expandGroup(str, group, repeats){
-    var ret = "";
-    for(var i = parseInt(repeats); i > 0; i--)
-        ret += group;
-    return ret;
+function expandGroup(str, group, repeats) {
+	var ret = "";
+	for (var i = parseInt(repeats); i > 0; i--)
+		ret += group;
+	return ret;
 }
 
-function explode(formula){
+function explode(formula) {
 	var res = {};
-  var collect = function(str, el, count){
-    count = count ? parseInt(count) : 1;
-  	res[el] = (res[el] || 0) + count;
-  };
-  
-  formula
-    .replace(/\((.+)\)(\d+)/g, expandGroup)
-    .replace(/([A-Z][a-z]?)(\d)?/g, collect);
-  return res;
+	var collect = function(str, el, count) {
+		count = count ? parseInt(count) : 1;
+		res[el] = (res[el] || 0) + count;
+	};
+
+	formula
+		.replace(/\((.+)\)(\d+)/g, expandGroup)
+	    .replace(/([A-Z][a-z]?)(\d)?/g, collect);
+	
+	return res;
 }
 
 console.log(explode('H2O')); // {"H": 2, "O": 1}
