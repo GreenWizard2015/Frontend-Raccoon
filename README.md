@@ -1,2 +1,2 @@
 # Frontend-Raccoon
-JS tasks
+Some JS exercies from http://jsraccoon.ru/
