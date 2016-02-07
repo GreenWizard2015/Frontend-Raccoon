@@ -18,7 +18,7 @@ function explode(formula) {
 
 	formula
 		.replace(/\((.+)\)(\d+)/g, expandGroup)
-	    .replace(/([A-Z][a-z]?)(\d)?/g, collect);
+		.replace(/([A-Z][a-z]?)(\d)?/g, collect);
 	
 	return res;
 }
